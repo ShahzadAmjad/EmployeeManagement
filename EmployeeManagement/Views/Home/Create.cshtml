@@ -1,15 +1,15 @@
-﻿
-@model Employee
+﻿@model EmployeeCreateViewModel
+
 
 @{ 
     ViewBag.Title = "Create Emoplyee";
 }
 
-<form asp-controller="Home" asp-action="Create" method="post">
+<form enctype="multipart/form-data" asp-controller="Home" asp-action="Create" method="post">
     <div class="mb-3">
         <label asp-for="Name " class="form-label"></label>
         <div>
-            <input asp-for="Name"  class="form-control" placeholder="Name" />
+            <input asp-for="Name" class="form-control" placeholder="Name" />
             <span asp-validation-for="Name" class="text-danger"></span>
         </div>
     </div>
@@ -30,6 +30,17 @@
                     asp-items="Html.GetEnumSelectList<Dept>()"></select>
         </div>
     </div>
+
+    <div class="mb-3">
+        <label asp-for="Photo " class="form-label"></label>
+        <div>
+            <input asp-for="Photo" class="form-control"  />  
+            
+        </div>
+    </div>
+
+
+
     <div asp-validation-summary="All" class="text-danger"></div>
 
 
